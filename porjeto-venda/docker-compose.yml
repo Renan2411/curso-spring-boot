@@ -1,0 +1,15 @@
+version: "3.8"
+services:
+  # Database Server
+  database:
+    container_name: database-curso
+    image: mariadb
+    ports:
+      - 3306:3306
+    environment:
+      - MARIADB_ROOT_PASSWORD=root
+    volumes:
+      - "db-data:/var/lib/mariadb/"
+
+volumes:
+  db-data: ~
