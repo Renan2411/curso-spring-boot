@@ -5,6 +5,7 @@ import br.com.gerenciaautoeletrica.domain.interfaces.dataprovider.IClienteDataPr
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
 import java.util.Optional;
 
 @Component
@@ -19,6 +20,11 @@ public class ClienteDataProviderImpl implements IClienteDataProvider {
     }
 
     @Override
+    public List<ClienteEntity> buscarListagem() {
+        return clienteRepository.findAll();
+    }
+
+    @Override
     public ClienteEntity criar(ClienteEntity clienteEntity) {
         return clienteRepository.save(clienteEntity);
     }
@@ -26,5 +32,10 @@ public class ClienteDataProviderImpl implements IClienteDataProvider {
     @Override
     public ClienteEntity editar(ClienteEntity clienteEntity) {
         return clienteRepository.save(clienteEntity);
+    }
+
+    @Override
+    public Boolean existePorId(Long idCliente) {
+        return clienteRepository.existsById(idCliente);
     }
 }

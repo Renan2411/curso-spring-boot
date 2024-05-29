@@ -1,8 +1,7 @@
 package br.com.gerenciaautoeletrica.adapter.controller.cliente;
 
-import br.com.gerenciaautoeletrica.domain.usecase.cliente.criar.CriarClienteInput;
-import br.com.gerenciaautoeletrica.domain.usecase.cliente.criar.CriarClienteOutput;
-import br.com.gerenciaautoeletrica.domain.usecase.cliente.criar.CriarClienteUseCase;
+import br.com.gerenciaautoeletrica.domain.usecase.cliente.buscarlistagem.BuscarListagemClienteOutput;
+import br.com.gerenciaautoeletrica.domain.usecase.cliente.buscarlistagem.BuscarListagemClienteUseCase;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
@@ -10,8 +9,7 @@ import io.swagger.annotations.ApiResponses;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -19,19 +17,19 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @AllArgsConstructor
 @RequestMapping("/api/clientes")
-public class CriarClienteController {
+public class BuscarListagemClienteController {
 
-    private final CriarClienteUseCase criarClienteUseCase;
+    private final BuscarListagemClienteUseCase buscarListagemClienteUseCase;
 
-    @ApiOperation("Criar um Cliente")
+    @ApiOperation("Listar Clientes")
     @ApiResponses(value = {
             @ApiResponse(code = 201, message = "Cliente criado"),
             @ApiResponse(code = 400, message = "A entrada dos parâmetros da criação do cliente está incorreta"),
     })
-    @PostMapping
-    public ResponseEntity<CriarClienteOutput> criarCliente(@RequestBody CriarClienteInput entrada) {
-        CriarClienteOutput output = criarClienteUseCase.executar(entrada);
-        return new ResponseEntity<>(output, HttpStatus.CREATED);
+    @GetMapping
+    public ResponseEntity<BuscarListagemClienteOutput> buscarListagem(){
+        BuscarListagemClienteOutput output = buscarListagemClienteUseCase.executar();
+        return new ResponseEntity<>(output, HttpStatus.OK);
     }
 
 }

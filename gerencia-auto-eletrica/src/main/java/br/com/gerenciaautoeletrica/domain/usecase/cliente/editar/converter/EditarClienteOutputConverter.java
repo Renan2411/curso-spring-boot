@@ -1,7 +1,7 @@
-package br.com.gerenciaautoeletrica.usecase.cliente.editar.converter;
+package br.com.gerenciaautoeletrica.domain.usecase.cliente.editar.converter;
 
 import br.com.gerenciaautoeletrica.domain.entity.entities.ClienteEntity;
-import br.com.gerenciaautoeletrica.usecase.cliente.editar.EditarClienteOutput;
+import br.com.gerenciaautoeletrica.domain.usecase.cliente.editar.EditarClienteOutput;
 import lombok.Builder;
 
 @Builder

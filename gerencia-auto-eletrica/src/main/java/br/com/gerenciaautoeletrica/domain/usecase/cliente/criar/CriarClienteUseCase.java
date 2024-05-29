@@ -1,9 +1,9 @@
-package br.com.gerenciaautoeletrica.usecase.cliente.criar;
+package br.com.gerenciaautoeletrica.domain.usecase.cliente.criar;
 
 import br.com.gerenciaautoeletrica.domain.entity.entities.ClienteEntity;
 import br.com.gerenciaautoeletrica.domain.interfaces.dataprovider.IClienteDataProvider;
+import br.com.gerenciaautoeletrica.domain.usecase.cliente.criar.converter.CriarClienteOutputConverter;
 import br.com.gerenciaautoeletrica.domain.validation.Validator;
-import br.com.gerenciaautoeletrica.usecase.cliente.criar.converter.CriarClienteOutputConverter;
 import lombok.Builder;
 
 import java.util.Objects;

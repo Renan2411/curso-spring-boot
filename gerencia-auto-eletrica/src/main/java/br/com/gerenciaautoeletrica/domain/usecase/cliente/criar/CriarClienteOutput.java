@@ -1,4 +1,4 @@
-package br.com.gerenciaautoeletrica.usecase.cliente.criar;
+package br.com.gerenciaautoeletrica.domain.usecase.cliente.criar;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -7,15 +7,15 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@ApiModel(value = "Entrada para cadastro de clientes")
+@ApiModel(value = "Saída do cadastro do cliente")
 @Data
-@Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class CriarClienteInput {
+@Builder
+public class CriarClienteOutput {
 
-    @ApiModelProperty(value = "Nome do cliente", required = true)
-    private String nome;
+    @ApiModelProperty(value = "id do cliente", required = true)
+    private Long id;
 
     @ApiModelProperty(value = "Cpf do cliente", required = true)
     private String cpf;
@@ -25,5 +25,8 @@ public class CriarClienteInput {
 
     @ApiModelProperty(value = "Email do cliente", required = true)
     private String email;
+
+    @ApiModelProperty(value = "Nome do cliente", required = true)
+    private String nome;
 
 }

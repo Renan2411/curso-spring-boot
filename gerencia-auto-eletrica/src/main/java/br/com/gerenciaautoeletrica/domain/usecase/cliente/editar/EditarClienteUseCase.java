@@ -1,10 +1,10 @@
-package br.com.gerenciaautoeletrica.usecase.cliente.editar;
+package br.com.gerenciaautoeletrica.domain.usecase.cliente.editar;
 
 import br.com.gerenciaautoeletrica.domain.entity.entities.ClienteEntity;
 import br.com.gerenciaautoeletrica.domain.exception.generic.GenericValidationException;
 import br.com.gerenciaautoeletrica.domain.interfaces.dataprovider.IClienteDataProvider;
 import br.com.gerenciaautoeletrica.domain.validation.Validator;
-import br.com.gerenciaautoeletrica.usecase.cliente.editar.converter.EditarClienteOutputConverter;
+import br.com.gerenciaautoeletrica.domain.usecase.cliente.editar.converter.EditarClienteOutputConverter;
 import lombok.Builder;
 
 import java.util.Objects;

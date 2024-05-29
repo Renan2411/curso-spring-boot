@@ -18,7 +18,11 @@ public class LocacaoService {
     private String vPrivada;
     String vDefault;
 
-    public Locacao alugarFilme(Usuario usuario, Filme filme) {
+    public Locacao alugarFilme(Usuario usuario, Filme filme) throws Exception {
+        if(filme.getEstoque() == 0){
+            throw new Exception("Filme sem estoque");
+        }
+
         Locacao locacao = new Locacao();
         locacao.setFilme(filme);
         locacao.setUsuario(usuario);
@@ -37,27 +41,27 @@ public class LocacaoService {
     }
 
     //CRIAÇÃO DE UM TESTE MANUAL E SIMPLES
-    public static void main(String[] args) {
-
-
-        //Cenário
-        Double precoLocacaoEsperado = 10.0;
-        Date dataLocacao = new Date();
-        Date DataRetornoEsperada = adicionarDias(dataLocacao, 1);
-
-        Filme filme = new Filme("Teste Unitário", 10, precoLocacaoEsperado);
-        Usuario usuario = new Usuario("Renan");
-        LocacaoService locacao = new LocacaoService();
-
-        //Ação
-        Locacao locacaoSalva = locacao.alugarFilme(usuario, filme);
-
-        //Verificação
-        System.out.println(isMesmaData(locacaoSalva.getDataLocacao(), dataLocacao));
-        System.out.println(isMesmaData(locacaoSalva.getDataRetorno(), DataRetornoEsperada));
-        System.out.println(locacaoSalva.getValor().equals(5));
-
-    }
+//    public static void main(String[] args) {
+//
+//
+//        //Cenário
+//        Double precoLocacaoEsperado = 10.0;
+//        Date dataLocacao = new Date();
+//        Date DataRetornoEsperada = adicionarDias(dataLocacao, 1);
+//
+//        Filme filme = new Filme("Teste Unitário", 10, precoLocacaoEsperado);
+//        Usuario usuario = new Usuario("Renan");
+//        LocacaoService locacao = new LocacaoService();
+//
+//        //Ação
+//        Locacao locacaoSalva = locacao.alugarFilme(usuario, filme);
+//
+//        //Verificação
+//        System.out.println(isMesmaData(locacaoSalva.getDataLocacao(), dataLocacao));
+//        System.out.println(isMesmaData(locacaoSalva.getDataRetorno(), DataRetornoEsperada));
+//        System.out.println(locacaoSalva.getValor().equals(5));
+//
+//    }
 
 	//CRIAÇÃO DE UM TESTE COM JUNIT
 

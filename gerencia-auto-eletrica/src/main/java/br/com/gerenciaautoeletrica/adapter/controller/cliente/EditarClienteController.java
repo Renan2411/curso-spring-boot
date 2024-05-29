@@ -1,8 +1,8 @@
 package br.com.gerenciaautoeletrica.adapter.controller.cliente;
 
-import br.com.gerenciaautoeletrica.usecase.cliente.editar.EditarClienteInput;
-import br.com.gerenciaautoeletrica.usecase.cliente.editar.EditarClienteOutput;
-import br.com.gerenciaautoeletrica.usecase.cliente.editar.EditarClienteUseCase;
+import br.com.gerenciaautoeletrica.domain.usecase.cliente.editar.EditarClienteInput;
+import br.com.gerenciaautoeletrica.domain.usecase.cliente.editar.EditarClienteOutput;
+import br.com.gerenciaautoeletrica.domain.usecase.cliente.editar.EditarClienteUseCase;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;

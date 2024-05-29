@@ -1,8 +1,8 @@
 package br.com.gerenciaautoeletrica.application.factory.cliente;
 
 import br.com.gerenciaautoeletrica.domain.interfaces.dataprovider.IClienteDataProvider;
-import br.com.gerenciaautoeletrica.usecase.cliente.criar.CriarClienteUseCase;
-import br.com.gerenciaautoeletrica.usecase.cliente.criar.converter.CriarClienteOutputConverter;
+import br.com.gerenciaautoeletrica.domain.usecase.cliente.criar.CriarClienteUseCase;
+import br.com.gerenciaautoeletrica.domain.usecase.cliente.criar.converter.CriarClienteOutputConverter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.DependsOn;

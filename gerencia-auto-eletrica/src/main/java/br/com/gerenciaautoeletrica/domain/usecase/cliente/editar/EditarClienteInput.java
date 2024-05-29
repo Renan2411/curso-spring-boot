@@ -1,4 +1,4 @@
-package br.com.gerenciaautoeletrica.usecase.cliente.editar;
+package br.com.gerenciaautoeletrica.domain.usecase.cliente.editar;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
