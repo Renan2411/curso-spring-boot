@@ -1,7 +1,9 @@
 package br.com.gerenciaautoeletrica.domain.entity.entities;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -16,6 +18,8 @@ import java.time.LocalDate;
 @Data
 @Builder
 @Entity
+@AllArgsConstructor
+@NoArgsConstructor
 @Table(name = "servicos")
 public class ServicoEntity {
 

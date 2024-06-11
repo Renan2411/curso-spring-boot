@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class BuscarPecaPoridOutput {
+public class BuscarPecaPorIdOutput {
 
     private Long id;
     private String nome;

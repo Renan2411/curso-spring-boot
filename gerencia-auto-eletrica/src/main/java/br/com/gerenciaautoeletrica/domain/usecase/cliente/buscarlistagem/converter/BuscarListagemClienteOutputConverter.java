@@ -12,6 +12,10 @@ public class BuscarListagemClienteOutputConverter {
 
     public BuscarListagemClienteOutput converter(List<ClienteEntity> clienteEntityList){
 
+        if(clienteEntityList.isEmpty()){
+            return BuscarListagemClienteOutput.builder().clientes(new ArrayList<>()).build();
+        }
+
         List<BuscarListagemClienteOutput.Cliente> clientes = new ArrayList<>();
 
         for(ClienteEntity cliente : clienteEntityList){

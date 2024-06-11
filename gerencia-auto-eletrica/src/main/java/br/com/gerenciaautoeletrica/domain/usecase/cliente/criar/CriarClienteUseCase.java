@@ -29,7 +29,7 @@ public class CriarClienteUseCase {
         return criarClienteOutputConverter.converter(cliente);
     }
 
-    public void validarEntrada(CriarClienteInput entrada){
+    private void validarEntrada(CriarClienteInput entrada){
         Validator.of(entrada)
                 .validate(Objects.nonNull(entrada.getNome()), "Nome é obrigatório")
                 .validate(Objects.nonNull(entrada.getCpf()), "Cnpj é obrigatório")
